@@ -50,7 +50,6 @@ body {
     color: rgb(245, 231, 206);
     /*display: grid;
     grid-template-columns: .5fr .5fr 1fr 1fr;*/
-
 }
 
 /*Nav Specs*/
@@ -76,13 +75,11 @@ nav ul li {
     margin: 0 10px;
 }
 
-/*Main Content-Articles*/
+/*Main Content-Articles in Home page*/
 .main-content {
-    
     grid-area: art;
     display: flex;
     justify-content: space-between;
-    
 }
 
 .main-content article a {
@@ -96,7 +93,6 @@ nav ul li {
 .article-1, .article-2, .article-3{
     background-color: #f9f9f9;
     padding: 10px;
-
 }
 
 .article-1 {
@@ -120,6 +116,39 @@ nav ul li {
     flex-basis: 32%;
 }
 
+/*Article Content - Template*/
+.sectionTemplate{
+    grid-area: art;
+    
+}
+.articleTemplate{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+        "name"
+        "photo"
+        "article";
+
+}
+.articleTitle{
+    padding: 10px;
+    grid-area: name;
+
+}
+.articleImg{
+    padding: 10px;
+    grid-area: photo;
+
+}
+.articleContent{
+    padding: 10px;
+    grid-area: article;
+
+}
+
+
 /*Sidebar Specs*/
 .aside {
     padding: 10px;
@@ -129,7 +158,6 @@ nav ul li {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    grid-gap: 1px 1px;
     grid-template-areas:
         "vid"
         "links"
