@@ -13,7 +13,7 @@ a {
 }
 
 a:hover {
-    color: darkgrey;
+    color:darkgrey;
     text-decoration: underline;
 }
 
@@ -84,8 +84,9 @@ nav ul li {
 
 .main-content article a {
     display: inline-block;
-    padding: 5px 10px;
-    border: solid 1px rgba(194, 194, 194, 0.3);
+    padding: 3px 10px;
+    border: solid 1px rgba(194, 194, 194, 0.6);
+    background-color: rgba(194, 194, 194, 0.3);
     text-decoration: none;
     color: rgb(83, 90, 102);
 }
@@ -119,35 +120,50 @@ nav ul li {
 /*Article Content - Template*/
 .sectionTemplate{
     grid-area: art;
-    
+    background-color: #f9f9f9;   
 }
+
 .articleTemplate{
     display: grid;
     grid-gap: 20px;
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
+    grid-template-rows: auto auto auto auto auto;
     grid-template-areas:
         "name"
         "photo"
-        "article";
-
+        "article"
+        "extra"
+        "img2";
 }
+
+.articleTemplate a{
+    text-decoration: underline;
+}
+
 .articleTitle{
     padding: 10px;
     grid-area: name;
-
 }
+
 .articleImg{
     padding: 10px;
     grid-area: photo;
-
 }
+
 .articleContent{
     padding: 10px;
     grid-area: article;
-
 }
 
+.articleExtra{
+    padding:10px;
+    grid-area: extra;
+}
+
+.articleImg2{
+    padding: 10px;
+    grid-area: img2;
+}
 
 /*Sidebar Specs*/
 .aside {
@@ -186,4 +202,26 @@ nav ul li {
     text-align: right;
     background-color: #f9f9f9;
     padding: 10px;
+}
+/*Media Query Print*/
+
+@media print{
+    .header, .navigation, .aside, .articleImg, .articleExtra, .articleImg2{
+        display: none;
+    }
+    
+    .sectionTemplate{
+        text-align: justify;
+        width: 90%;
+        margin: 20px;
+        padding: 0px;
+    }
+    .sectionTemplate{
+        font-family: 'Times New Roman', Times, sans-serif;
+    }
+    .footer{
+        font-family: 'Times New Roman', Times, sans-serif;
+        line-height: 0.5;
+    }
+
 }
